@@ -102,11 +102,11 @@ if (getValue('authorizationcode') === null) {
     authorize();
 }
 
-// Create the Exact client
-$connection = connect();
-
-// Get the journals from our administration
 try {
+    // Create the Exact client
+    $connection = connect();
+    
+    // Get the journals from our administration
     $journals = new \Picqer\Financials\Exact\Journal($connection);
     $result   = $journals->get();
     foreach ($result as $journal) {
